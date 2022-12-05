@@ -1,4 +1,4 @@
-This is the repository for the files used in the demonstration of test automation.
+This is the repository for the files used in the demonstration of test automation. All java files are to be exported as jar files for test execution.
 
 Files with prefix "TC" denotes test cases
 
