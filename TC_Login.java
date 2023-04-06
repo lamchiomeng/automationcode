@@ -172,12 +172,12 @@ public class TC_Login {
 		try {
 			StringBuilder htmlStringBuilder=new StringBuilder();
 			htmlStringBuilder.append("<table class= 'd' >");
-	        htmlStringBuilder.append(stringBuilder);
-	        htmlStringBuilder.append("<tr><td bgcolor = 'red'><p style ='color:white'>"+testCase+"</p></td>");
-		    htmlStringBuilder.append("<td bgcolor = 'red'><p style ='color:white'>"+"Home text is displayed"+"</p></td>");
-		    htmlStringBuilder.append("<td bgcolor = 'red'><p style ='color:white'>"+result+"</p></td></tr>");
-	        htmlStringBuilder.append("</table></body></html>");
-	        WriteToFile(htmlStringBuilder.toString(),fileName);		        
+	        	htmlStringBuilder.append(stringBuilder);
+	        	htmlStringBuilder.append("<tr><td bgcolor = 'red'><p style ='color:white'>"+testCase+"</p></td>");
+		    	htmlStringBuilder.append("<td bgcolor = 'red'><p style ='color:white'>"+"Home text is displayed"+"</p></td>");
+		    	htmlStringBuilder.append("<td bgcolor = 'red'><p style ='color:white'>"+result+"</p></td></tr>");
+	        	htmlStringBuilder.append("</table></body></html>");
+	        	WriteToFile(htmlStringBuilder.toString(),fileName);		        
 	    } 
 		catch (IOException e) {
 	        e.printStackTrace();
