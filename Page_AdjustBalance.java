@@ -55,7 +55,7 @@ public class Page_AdjustBalance {
 	    	Method method = cls.getDeclaredMethod(methodToCall, arg[0], arg[1]);
 		method.invoke(obj,currentBalance, newBalance);
 	} //end adjustBalanceVerification 
-}//end public class LoginSignUp
+}//end public class Page_AdjustBalance
 
 
 
