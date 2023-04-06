@@ -130,19 +130,19 @@ public class TC_Login {
 		StringBuilder htmlStringBuilder=new StringBuilder();
 		//The following create table header
 		htmlStringBuilder.append("<html><head><style>table{border-collapse: collapse; border:0px solid black}");
-	    htmlStringBuilder.append("th,td {border: 1px solid black;}");
-	    htmlStringBuilder.append("table.d {table-layout: fixed; width: 150%;}</style></head><body>");	
-	    htmlStringBuilder.append("<h2>"+testCase+": Result</h2>");
-	    htmlStringBuilder.append("<table class= 'd' >");
-	    htmlStringBuilder.append("<tr><th><b>Test Case</b></th>");
-	    htmlStringBuilder.append("<th><b>Expected Result</b></th>");
-	    htmlStringBuilder.append("<th><b>Result</b></th></tr>");
-	    if(result.equals("PASS")) {
-	    	resultPass(htmlStringBuilder.toString(), testCase, result);
-	    }
-	    else {
-	    	resultFail(htmlStringBuilder.toString(), testCase, result);
-	    }
+		htmlStringBuilder.append("th,td {border: 1px solid black;}");
+		htmlStringBuilder.append("table.d {table-layout: fixed; width: 150%;}</style></head><body>");	
+		htmlStringBuilder.append("<h2>"+testCase+": Result</h2>");
+		htmlStringBuilder.append("<table class= 'd' >");
+		htmlStringBuilder.append("<tr><th><b>Test Case</b></th>");
+		htmlStringBuilder.append("<th><b>Expected Result</b></th>");
+		htmlStringBuilder.append("<th><b>Result</b></th></tr>");
+		if(result.equals("PASS")) {
+	    		resultPass(htmlStringBuilder.toString(), testCase, result);
+	    	}
+	    	else {
+	    		resultFail(htmlStringBuilder.toString(), testCase, result);
+	        }
 	}// end createNewResultTable  
 	static void addRow(String testCase, String result) {
 		if(result.equals("PASS")) {
@@ -158,8 +158,8 @@ public class TC_Login {
 	        htmlStringBuilder.append("<table class= 'd' >");
 	        htmlStringBuilder.append(stringBuilder);
 	        htmlStringBuilder.append("<tr><td>"+testCase+"</td>");
-		    htmlStringBuilder.append("<td>"+"Home text is displayed"+"</td>");
-		    htmlStringBuilder.append("<td>"+result+"</td></tr>");
+		htmlStringBuilder.append("<td>"+"Home text is displayed"+"</td>");
+		htmlStringBuilder.append("<td>"+result+"</td></tr>");
 	        htmlStringBuilder.append("</table></body></html>");
 	        WriteToFile(htmlStringBuilder.toString(), fileName);		        
 	    } 
@@ -187,7 +187,7 @@ public class TC_Login {
 	    String tempFile = projectPath + File.separator+fileName;
 	    File file = new File(tempFile);
 	    // if file does exists, then delete and create a new file
-	          //write to file with OutputStreamWriter
+	    //write to file with OutputStreamWriter
 	    //OutputStream outputStream = new FileOutputStream(file);
 	    FileOutputStream fos =new FileOutputStream(file, true) ;
 	    Writer writer=new OutputStreamWriter(fos);
