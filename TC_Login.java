@@ -38,7 +38,6 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.xmlbeans.impl.xb.xsdschema.ListDocument.List;
-
 public class TC_Login {
 	//****** Variables declaration *******
 	static AndroidDriver <MobileElement> driverApp;	
@@ -86,10 +85,10 @@ public class TC_Login {
 		for(countDesCapTab = 1; countDesCapTab <= tabDesCap.getLastRowNum(); countDesCapTab++) { //desCap tab loop        			
 			XSSFRow currentrowDesCap = tabDesCap.getRow(countDesCapTab); //current row being read
 			deviceName = currentrowDesCap.getCell(0).toString();
-            platformName = currentrowDesCap.getCell(1).toString();	
-            appPackage = currentrowDesCap.getCell(2).toString();	            
-		    appActivity = currentrowDesCap.getCell(3).toString();	
-		    DesCap desCapObj = new DesCap();
+            		platformName = currentrowDesCap.getCell(1).toString();	
+            		appPackage = currentrowDesCap.getCell(2).toString();	            
+		    	appActivity = currentrowDesCap.getCell(3).toString();	
+		    	DesCap desCapObj = new DesCap();
 			desCapObj.setDesCap(deviceName, platformName, appPackage, appActivity);		
 		}// end desCap tab loop	   
 	}// end main method
@@ -102,12 +101,11 @@ public class TC_Login {
 		for(countLoginDetailsTab = 1; countLoginDetailsTab <= tabLoginDetails.getLastRowNum(); countLoginDetailsTab++) { //Login tab loop        			
 			System.out.println("Round : " + countLoginDetailsTab);
 			XSSFRow currentrowLoginDetails = tabLoginDetails.getRow(countLoginDetailsTab); //current row being read
-			
 			userName =  currentrowLoginDetails.getCell(0).toString();
-            passWord =  currentrowLoginDetails.getCell(1).toString();	
-            Page_SplashScreen.clickStartNow(dc, driverApp);	
-		    System.out.println("dc = " + dc + "and driverApp = " + driverApp);
-		    Page_LoginSignUp.clickLogin(dc, driverApp, userName, passWord);
+            		passWord =  currentrowLoginDetails.getCell(1).toString();	
+            		Page_SplashScreen.clickStartNow(dc, driverApp);	
+		    	System.out.println("dc = " + dc + "and driverApp = " + driverApp);
+		    	Page_LoginSignUp.clickLogin(dc, driverApp, userName, passWord);
 		}//end for LoginDetails tab
 	}//
 	static void verification(String loginVerification) { //verify login status (successful / fail)
