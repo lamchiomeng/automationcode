@@ -127,7 +127,7 @@ public class TC_AdjustBalance {
 			System.out.println("Round : " + countAdjustBalanceTab);
 			XSSFRow currentRowAdjustBalance = tabAdjustBalance.getRow(countAdjustBalanceTab); //current row being read			
 			newValue =  currentRowAdjustBalance.getCell(0).toString();
-	        Page_AdjustBalance.adjustBalance(dc, driverApp, newValue);
+	        	Page_AdjustBalance.adjustBalance(dc, driverApp, newValue);
 		}//end for AdjustBalance loop tab
 	}//end Adjust Balance method
 	static void verification(String verification) {
@@ -194,11 +194,11 @@ public class TC_AdjustBalance {
 	        htmlStringBuilder.append("<table class= 'd' >");
 	        htmlStringBuilder.append(stringBuilder);
 	        htmlStringBuilder.append("<tr><td>"+testCase+"</td>");
-		    htmlStringBuilder.append("<td>"+currentBalanceWithoutCurrencySymbol+"</td>");
-		    htmlStringBuilder.append("<td>"+newValue+"</td>");
-		    htmlStringBuilder.append("<td>"+newValueDoubleAfterRoundUp+"</td>");
-		    htmlStringBuilder.append("<td>"+newBalanceWithoutCurrencySymbol+"</td>");
-		    htmlStringBuilder.append("<td>"+result+"</td></tr>");
+		htmlStringBuilder.append("<td>"+currentBalanceWithoutCurrencySymbol+"</td>");
+		htmlStringBuilder.append("<td>"+newValue+"</td>");
+		htmlStringBuilder.append("<td>"+newValueDoubleAfterRoundUp+"</td>");
+		htmlStringBuilder.append("<td>"+newBalanceWithoutCurrencySymbol+"</td>");
+		htmlStringBuilder.append("<td>"+result+"</td></tr>");
 	        htmlStringBuilder.append("</table></body></html>");
 	        WriteToFile(htmlStringBuilder.toString(), fileName);		        
 	    } 
@@ -210,26 +210,26 @@ public class TC_AdjustBalance {
 		try {
 			StringBuilder htmlStringBuilder=new StringBuilder();
 			htmlStringBuilder.append("<table class= 'd' >");
-	        htmlStringBuilder.append(stringBuilder);
-	        htmlStringBuilder.append("<tr><td bgcolor = 'red'><p style ='color:white'>"+testCase+"</p></td>");
-		    htmlStringBuilder.append("<td bgcolor = 'red'><p style ='color:white'>"+currentBalanceWithoutCurrencySymbol+"</p></td>");
-		    htmlStringBuilder.append("<td bgcolor = 'red'><p style ='color:white'>"+newValue+"</p></td>");
-		    htmlStringBuilder.append("<td bgcolor = 'red'><p style ='color:white'>"+newValueDoubleAfterRoundUp+"</p></td>");
-		    htmlStringBuilder.append("<td bgcolor = 'red'><p style ='color:white'>"+newBalanceWithoutCurrencySymbol+"</p></td>");
-		    htmlStringBuilder.append("<td bgcolor = 'red'><p style ='color:white'>"+result+"</p></td></tr>");
-	        htmlStringBuilder.append("</table></body></html>");
-	        WriteToFile(htmlStringBuilder.toString(),fileName);		        
-	    } 
+	        	htmlStringBuilder.append(stringBuilder);
+	        	htmlStringBuilder.append("<tr><td bgcolor = 'red'><p style ='color:white'>"+testCase+"</p></td>");
+		    	htmlStringBuilder.append("<td bgcolor = 'red'><p style ='color:white'>"+currentBalanceWithoutCurrencySymbol+"</p></td>");
+		    	htmlStringBuilder.append("<td bgcolor = 'red'><p style ='color:white'>"+newValue+"</p></td>");
+		    	htmlStringBuilder.append("<td bgcolor = 'red'><p style ='color:white'>"+newValueDoubleAfterRoundUp+"</p></td>");
+		    	htmlStringBuilder.append("<td bgcolor = 'red'><p style ='color:white'>"+newBalanceWithoutCurrencySymbol+"</p></td>");
+		    	htmlStringBuilder.append("<td bgcolor = 'red'><p style ='color:white'>"+result+"</p></td></tr>");
+	        	htmlStringBuilder.append("</table></body></html>");
+	        	WriteToFile(htmlStringBuilder.toString(),fileName);		        
+	        } 
 		catch (IOException e) {
 	        e.printStackTrace();
-	    }
+	        }
 	}// end resultFail
 	static void WriteToFile(String fileContent, String fileName) throws IOException {
 	    String projectPath = "C:/TA/TR";
 	    String tempFile = projectPath + File.separator+fileName;
 	    File file = new File(tempFile);
 	    // if file does exists, then delete and create a new file
-	          //write to file with OutputStreamWriter
+	    //write to file with OutputStreamWriter
 	    //OutputStream outputStream = new FileOutputStream(file);
 	    FileOutputStream fos =new FileOutputStream(file, true) ;
 	    Writer writer=new OutputStreamWriter(fos);
