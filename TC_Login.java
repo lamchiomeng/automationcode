@@ -76,7 +76,6 @@ public class TC_Login {
 		dateTime = new SimpleDateFormat("yyyyMMdd_HHmm'.html'").format(new Date());
 		testResultFilename = "C://TA//TR//"+testCase+"_"+dateTime;
 		fileName = testCase+"_"+dateTime;		
-		
 		//The following setups call to read Test Data file for Desired Capabilities' definition
 		FileInputStream desCap = new FileInputStream(testDataFile);		
 	 	XSSFWorkbook wbDesCap = new XSSFWorkbook(desCap);
