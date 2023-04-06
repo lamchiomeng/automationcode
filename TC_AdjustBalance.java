@@ -38,7 +38,6 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.xmlbeans.impl.xb.xsdschema.ListDocument.List;
-
 public class TC_AdjustBalance {
 	//****** Variables declaration *******
 	static AndroidDriver <MobileElement> driverApp;	
@@ -81,7 +80,6 @@ public class TC_AdjustBalance {
 		dateTime1 = new SimpleDateFormat("yyyyMMdd_HHmm").format(new Date());
 		testResultFilename = "C://TA//TR//"+testCase+"_"+dateTime;
 		fileName = testCase+"_"+dateTime;		
-		
 		//The following variables are for testing in Production. Comment it when testing in DEV MODE
 		/*testCase = args[0];
 		testDataFile = args[1];			
@@ -94,8 +92,7 @@ public class TC_AdjustBalance {
 		fileName = testCase+"_"+dateTime;		
 		*/
 		//runCycle = 2;
-		//for(countCycle = 1; countCycle <= runCycle; countCycle++) {
-		
+		//for(countCycle = 1; countCycle <= runCycle; countCycle++) {		
 		//The following setups call to read Test Data file for Desired Capabilities' definition
 		FileInputStream desCap = new FileInputStream(testDataFile);		
 	 	XSSFWorkbook wbDesCap = new XSSFWorkbook(desCap);
@@ -104,18 +101,18 @@ public class TC_AdjustBalance {
 		for(countDesCapTab = 1; countDesCapTab <= tabDesCap.getLastRowNum(); countDesCapTab++) { //desCap tab loop        			
 			XSSFRow currentrowDesCap = tabDesCap.getRow(countDesCapTab); //current row being read
 			deviceName = currentrowDesCap.getCell(0).toString();
-            platformName = currentrowDesCap.getCell(1).toString();	
-            appPackage = currentrowDesCap.getCell(2).toString();	            
-		    appActivity = currentrowDesCap.getCell(3).toString();	
-		    DesCap desCapObj = new DesCap();
+            		platformName = currentrowDesCap.getCell(1).toString();	
+            		appPackage = currentrowDesCap.getCell(2).toString();	            
+		   	appActivity = currentrowDesCap.getCell(3).toString();	
+		    	DesCap desCapObj = new DesCap();
 			desCapObj.setDesCap(deviceName, platformName, appPackage, appActivity);		
 		}// end desCap tab loop	 
 		//driverApp.quit();
 	}// end main method
 	static void startScreen(DesiredCapabilities dc, AndroidDriver<MobileElement> driverApp) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException, ClassNotFoundException, IOException, InterruptedException {
 		userName =  "lamchiomeng78@gmail.com";	
-        passWord =  "123Tester456";
-        Page_SplashScreen.clickStartNow(dc, driverApp);	
+        	passWord =  "123Tester456";
+        	Page_SplashScreen.clickStartNow(dc, driverApp);	
 		System.out.println("dc = " + dc + "and driverApp = " + driverApp);
 		Page_LoginSignUp.clickLogin(dc, driverApp, userName, passWord);
 		adjustBalance(dc, driverApp);
