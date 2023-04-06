@@ -1,6 +1,5 @@
 import java.text.SimpleDateFormat;
 import java.util.concurrent.TimeUnit;
-
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -8,20 +7,16 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-public class Page_LoginSignUp {
-	
+public class Page_LoginSignUp {	
 	//***** Define variable ***********
 	static AndroidDriver <MobileElement> driverApp;
 	static AppiumDriver <MobileElement> driverApp1;
@@ -46,7 +41,7 @@ public class Page_LoginSignUp {
 		catch (Exception e) {
 			successLoginToMainPage(driverApp);
 		}		
-	    verification(loginVerification);
+	    	verification(loginVerification);
 	} //end clickLogin method
 	static void successLoginToMainPage(AndroidDriver<MobileElement> driverApp) {
 		try {
@@ -58,7 +53,7 @@ public class Page_LoginSignUp {
 		}
 	}//end successLoginToMainPage	
 	public static void verification(String loginVerifcation) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException, ClassNotFoundException {
-		callingClass = new Exception().getStackTrace()[2].getClassName(); 
+	callingClass = new Exception().getStackTrace()[2].getClassName(); 
         Class<?> cls = Class.forName(callingClass);
         Object obj = cls.newInstance();	
         String class_name = cls.getName();
